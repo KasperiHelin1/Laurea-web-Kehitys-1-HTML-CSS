@@ -34,7 +34,7 @@ console.log("Terve " + visitorName + "! Sinun lempi oliosi on " + visitorFavorit
 // console.log("Hello, " + visitorName + "! Your favorite animal is " + visitorFavoriteAnimal + ".");
 
 // ⭐⭐ BONUS Ask the user for their favorite animal.If their favorite animal is "Blue Elephant", print: Great choice! That's my favorite animal too!
-if (visitorFavoriteAnimal === favoriteAnimal) {
+if (visitorFavoriteAnimal === favoriteAnimal || visitorFavoriteAnimal === "koira") {
     console.log("Great choice! That's my favorite animal too!");
 } else {
     console.log("Nice! Your favorite animal is " + visitorFavoriteAnimal + ".");
