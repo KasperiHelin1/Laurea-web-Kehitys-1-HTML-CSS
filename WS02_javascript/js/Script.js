@@ -41,3 +41,8 @@ if (visitorFavoriteAnimal === favoriteAnimal || visitorFavoriteAnimal === "koira
 }
 // ⭐⭐ BONUS Otherwise, print: Nice! Your favorite animal is [animal]. Can you figure out how to do this using if / else?
 
+const button = document.getElementById("myButton");
+button.addEventListener("click", function() {
+    alert("PÖÖ Säikähditkö?");
+});
+// käytin tekoälyä apuna javascriptin yhdistämiseen html:ään.
