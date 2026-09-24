@@ -169,3 +169,50 @@ tbody tr:nth-child(even) {
         width: 100%;
     }
 }
+/*tässä käytin tekoälyä nopeuttaakseen kaikkien taustojen muuttamista tummaksi*/
+.dark-theme {
+    background-color: #222222;
+    color: white;
+}
+
+.dark-theme header,
+.dark-theme section {
+    background-color: #333333;
+}
+
+.dark-theme h1,
+.dark-theme h3 {
+    color: #c4a7ff;
+}
+
+.dark-theme h2 {
+    color: #66b5e8;
+}
+
+.dark-theme hr {
+    border-top-color: #555555;
+}
+
+.dark-theme input,
+.dark-theme select {
+    background-color: #444444;
+    color: white;
+    border-color: #777777;
+}
+
+.dark-theme code {
+    background-color: #444444;
+    color: white;
+}
+
+.dark-theme .instructions {
+    background-color: #3d3850;
+}
+.dark-theme tbody tr:nth-child(even) {
+    background-color: #444444;
+}
+
+.dark-theme th,
+.dark-theme td {
+    border-color: #666666;
+}
