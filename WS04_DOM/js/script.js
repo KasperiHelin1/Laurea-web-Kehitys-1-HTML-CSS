@@ -39,9 +39,53 @@ animalButton.addEventListener("click", function(){
     console.log("nappia painettu");
 });
 
+/* aluksi tein näin tehtävän mutta tekoäly korjasi että on väärin
+const hideAnimalButton = document.querySelector("#hideAnimalButton");
+const showAnimalButton = document.querySelector("#showAnimalButton");
+const mäyräkoira = document.querySelector("#mäyräkoira");
+const mäyräkoiraText = document.querySelector("#mäyräkoiraText");
 
+hideAnimalButton.addEventListener("click", function(){
+    mäyräkoira.hidden = true;
+    mäyräkoiraText.hidden = true;
+    console.log("nappia painettu");
+});
 
+showAnimalButton.addEventListener("click", function(){
+    mäyräkoira.hidden = false;
+    mäyräkoiraText.hidden = false;
+    console.log("nappia painettu");
+});
 
+*/
+
+const animalContent = document.querySelector("#animalContent");
+
+const animalHeading = document.createElement("h3");
+animalHeading.textContent = "Päivän eläin";
+animalHeading.classList.add("animal-heading");
+
+const mäyräkoiraText = document.createElement("p");
+mäyräkoiraText.textContent =
+    "Mäyräkoirat ovat luonteeltaan metsästäjiä, mutta ystävällisiä.";
+
+const mäyräkoira = document.createElement("img");
+mäyräkoira.src = "images/IMG_3384.jpg";
+mäyräkoira.alt = "Mäyräkoira";
+mäyräkoira.height = 700;
+
+animalContent.append(animalHeading, mäyräkoira, mäyräkoiraText);
+
+const hideAnimalButton = document.querySelector("#hideAnimalButton");
+const showAnimalButton = document.querySelector("#showAnimalButton");
+
+hideAnimalButton.addEventListener("click", function() {
+    animalContent.hidden = true;
+});
+
+showAnimalButton.addEventListener("click", function() {
+    animalContent.hidden = false;
+});
 
 
 // -------------------------------------------------- EXAMPLE 3 LISTEN DROPDOWN SELECT
@@ -89,3 +133,47 @@ animalSelect.addEventListener("change", function() {
 });
 
     // function to update the DOM based on the selected animal
+
+const animalForm = document.querySelector("#animalForm");
+const observationTableBody = document.querySelector("#observationTableBody");
+
+animalForm.addEventListener("submit", function(event) {
+
+    // Estetään sivun uudelleenlataus
+    event.preventDefault();
+
+    // Haetaan kenttien arvot
+    const animal = document.querySelector("#observationAnimal").value;
+    const location = document.querySelector("#observationLocation").value;
+    const date = document.querySelector("#observationDate").value;
+
+    // Tarkistetaan, etteivät kentät ole tyhjiä
+    if (animal === "" || location === "" || date === "") {
+        alert("Täytä kaikki kentät!");
+        return;
+    }
+
+    // Luodaan uusi taulukkorivi
+    const newRow = document.createElement("tr");
+
+    // Luodaan taulukon solut
+    const animalCell = document.createElement("td");
+    const locationCell = document.createElement("td");
+    const dateCell = document.createElement("td");
+
+    // Lisätään tiedot soluihin
+    animalCell.textContent = animal;
+    locationCell.textContent = location;
+    dateCell.textContent = date;
+
+    // Lisätään solut riville
+    newRow.append(animalCell, locationCell, dateCell);
+
+    // Lisätään rivi taulukkoon
+    observationTableBody.append(newRow);
+
+    // Tyhjennetään lomake
+    animalForm.reset();
+});
+
+
